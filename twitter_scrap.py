@@ -94,7 +94,7 @@ def scrape_twitter_profile(url):
         'Followers Count': followers_count,
         'Location': location,
         'Website': website
-        # 'url':url
+       
     }
 
     return data
@@ -107,6 +107,7 @@ with open(file_name, 'r') as file:
     for row in reader:
         print(row[0])
         data = scrape_twitter_profile(row[0])
+        # data is inserted into csv file.
         write_to_csv(data, "twitter_profile.csv")
         print(data)
 
